@@ -105,9 +105,9 @@ Shader "UIEffects/Outline"
                 outCol.rgb = stroke.rgb + col.rgb * (1.0 - stroke.a);
                 outCol.a = stroke.a + col.a * (1.0 - stroke.a);
 
-                // #if _UIE_OUTPUT_LINEAR
-                // outCol.rgb = GammaToLinearSpace(outCol.rgb);
-                // #endif
+                #if _UIE_OUTPUT_LINEAR
+                outCol.rgb = GammaToLinearSpace(outCol.rgb);
+                #endif
 
                 return outCol;
             }
