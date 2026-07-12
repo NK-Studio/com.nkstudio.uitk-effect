@@ -1,0 +1,15 @@
+{
+  "name": "com.nkstudio.uitk-effects",
+  "displayName": "UITK Effects",
+  "version": "1.0.0",
+  "unity": "6000.3",
+  "unityRelease": "0f1",
+  "description": "UI Toolkit custom post-processing filters and gradient material.\n\n\u25aa Drop Shadow / Inner Shadow / Outer Glow / Outline filters (FilterFunctionDefinition assets)\n\u25aa Gradient material for -unity-material, with angle and step (posterize) control\n\u25aa Asset-only: no runtime C# required",
+  "author": {
+    "name": "NK Studio",
+    "email": "bnm000215@naver.com"
+  },
+  "changelogUrl": "https://nk-studio.github.io/Packages/com.nkstudio.uitk-effects@1.0/changelog/CHANGELOG.html",
+  "documentationUrl": "https://nk-studio.github.io/Packages/com.nkstudio.uitk-effects@1.0/manual/index.html",
+  "licensesUrl": "https://nk-studio.github.io/Packages/com.nkstudio.uitk-effects@1.0/license/License.html"
+}

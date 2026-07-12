@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19107, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: OuterGlowFilter
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.FilterFunctionDefinition
+  m_FilterName: outer-glow
+  m_Parameters:
+  - m_Name: radius
+    m_InterpolationDefaultValue:
+      m_Type: 0
+      m_FloatValue: 0
+      m_ColorValue: {r: 0, g: 0, b: 0, a: 0}
+  - m_Name: intensity
+    m_InterpolationDefaultValue:
+      m_Type: 0
+      m_FloatValue: 1
+      m_ColorValue: {r: 0, g: 0, b: 0, a: 0}
+  - m_Name: color
+    m_InterpolationDefaultValue:
+      m_Type: 1
+      m_FloatValue: 0
+      m_ColorValue: {r: 1, g: 1, b: 0.6, a: 1}
+  m_Passes:
+  - m_Material: {fileID: 2100000, guid: 3a5c7e9b1d3f5a7c9e1b3d5f7a9c1e3b, type: 2}
+    m_PassIndex: 0
+    m_ParameterBindings:
+    - m_Index: 0
+      m_Name: _Radius
+    - m_Index: 1
+      m_Name: _Intensity
+    - m_Index: 2
+      m_Name: _GlowColor
+    m_ReadMargins:
+      m_Left: 32
+      m_Top: 32
+      m_Right: 32
+      m_Bottom: 32
+    m_WriteMargins:
+      m_Left: 32
+      m_Top: 32
+      m_Right: 32
+      m_Bottom: 32
