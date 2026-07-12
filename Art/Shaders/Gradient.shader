@@ -209,6 +209,8 @@ Shader "UIEffects/Gradient"
                     input.uvClip,
                     input.textCoreLocLayoutUV.xy,
                     input.circle);
+                
+                
                 float2 layoutUV = input.textCoreLocLayoutUV.zw;
 
                 // Angle 0 = left-to-right; layout UV is y-down, so positive angles
@@ -223,8 +225,7 @@ Shader "UIEffects/Gradient"
                 float2 projectionMaxUV = 1.0 - projectionMinUV;
                 float projectionMin = dot(projectionMinUV, direction);
                 float projectionMax = dot(projectionMaxUV, direction);
-                float t = saturate((dot(layoutUV, direction) - projectionMin)
-                                 / max(projectionMax - projectionMin, 0.0001));
+                float t = saturate((dot(layoutUV, direction) - projectionMin)/ max(projectionMax - projectionMin, 0.0001));
 
                 // Photoshop-style Gradient Overlay scale. 150% is treated as the
                 // full linear span used by this shader; lower values compress the
@@ -233,6 +234,14 @@ Shader "UIEffects/Gradient"
                 t = saturate((t - 0.5) * (150.0 / scalePercent) + 0.5);
 
                 float4 gradient = lerp(_ColorStart, _ColorEnd, t);
+
+#if !UIE_COLORSPACE_GAMMA
+                // _ColorStart/_ColorEnd arrive as raw sRGB values from USS prop().
+                // UITK converts vertex colors to linear in uie_std_vert, so do the
+                // same here or the gradient renders washed out in linear panels.
+                // Lerp happens in gamma space above to match the UI Builder preview.
+                gradient.rgb = uie_gamma_to_linear(gradient.rgb);
+#endif
 
                 // The material only affects this element's own geometry (children render
                 // separately), so tinting the base fill is safe for any child content.
