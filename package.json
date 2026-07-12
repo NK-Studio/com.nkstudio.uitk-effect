@@ -11,5 +11,12 @@
   },
   "changelogUrl": "https://nk-studio.github.io/Packages/com.nkstudio.uitk-effects@1.0/changelog/CHANGELOG.html",
   "documentationUrl": "https://nk-studio.github.io/Packages/com.nkstudio.uitk-effects@1.0/manual/index.html",
-  "licensesUrl": "https://nk-studio.github.io/Packages/com.nkstudio.uitk-effects@1.0/license/License.html"
+  "licensesUrl": "https://nk-studio.github.io/Packages/com.nkstudio.uitk-effects@1.0/license/License.html",
+  "samples": [
+    {
+      "displayName": "Filter Sample",
+      "description": "Demonstrates shadows, outline, and gradient effects with UI Toolkit.",
+      "path": "Samples~/Filter Sample"
+    }
+  ]
 }

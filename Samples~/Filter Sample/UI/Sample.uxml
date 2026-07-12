@@ -1,0 +1,41 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="Sample.uss"/>
+    <ui:VisualElement name="uitk-effects-sample-showcase" class="sample-showcase">
+        <ui:VisualElement name="shadow-samples-row" class="sample-showcase__row sample-showcase__row--shadows">
+            <ui:VisualElement name="drop-shadow-card" class="shadow-card shadow-card--drop" style="filter: filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/DropShadowFilter.asset?fileID=11400000&amp;guid=5b9e2f4a6c8d4e1f0a3b5c7d9e1f2a4c&amp;type=2#DropShadowFilter&quot;) 20 20 70 rgba(0, 0, 0, 0.298)) filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/DropShadowFilterB.asset?fileID=11400000&amp;guid=2b4d6f8a0c2e4b6d8f0a2c4e6b8d0f2b&amp;type=2#DropShadowFilterB&quot;) -20 -20 70 rgba(255, 255, 255, 0.698));">
+                <ui:Label name="drop-shadow-label" text="Drop Shadow" class="shadow-card__label"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="inner-shadow-card" class="shadow-card shadow-card--inner-square" style="filter: filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/InnerShadowFilter.asset?fileID=11400000&amp;guid=1f3a5c7e9b1d3f5a7c9e1b3d5f7a9d1f&amp;type=2#InnerShadowFilter&quot;) 20 20 70 rgba(255, 255, 255, 0.698)) filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/InnerShadowFilterB.asset?fileID=11400000&amp;guid=4d6f8a0c2e4b6d8f0a2c4e6b8d0f2b4d&amp;type=2#InnerShadowFilterB&quot;) -20 -20 70 rgba(0, 0, 0, 0.298));">
+                <ui:Label name="inner-shadow-label" text="Inner Shadow" class="shadow-card__label"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="inner-shadow-orb" class="shadow-card shadow-card--inner-circle" style="filter: filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/InnerShadowFilter.asset?fileID=11400000&amp;guid=1f3a5c7e9b1d3f5a7c9e1b3d5f7a9d1f&amp;type=2#InnerShadowFilter&quot;) 20 20 70 rgba(255, 255, 255, 0.698)) filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/InnerShadowFilterB.asset?fileID=11400000&amp;guid=4d6f8a0c2e4b6d8f0a2c4e6b8d0f2b4d&amp;type=2#InnerShadowFilterB&quot;) -20 -20 70 rgba(0, 0, 0, 0.298));">
+                <ui:VisualElement name="inner-shadow-orb-core" class="shadow-card__inner-circle" style="filter: filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/DropShadowFilter.asset?fileID=11400000&amp;guid=5b9e2f4a6c8d4e1f0a3b5c7d9e1f2a4c&amp;type=2#DropShadowFilter&quot;) -10 -10 12 rgba(255, 255, 255, 0.298)) filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/DropShadowFilterB.asset?fileID=11400000&amp;guid=2b4d6f8a0c2e4b6d8f0a2c4e6b8d0f2b&amp;type=2#DropShadowFilterB&quot;) 10 10 12 rgba(0, 0, 0, 0.298));">
+                    <ui:Label name="inner-shadow-orb-label" text="Inner Shadow" class="shadow-card__label shadow-card__label--small"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="control-samples-row" class="sample-showcase__row sample-showcase__row--controls">
+            <ui:VisualElement name="bookmark-button-sample" class="icon-button icon-button--bookmark" style="filter: filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/DropShadowFilter.asset?fileID=11400000&amp;guid=5b9e2f4a6c8d4e1f0a3b5c7d9e1f2a4c&amp;type=2#DropShadowFilter&quot;) 15 15 30 rgba(0, 0, 0, 0.298)) filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/DropShadowFilterB.asset?fileID=11400000&amp;guid=2b4d6f8a0c2e4b6d8f0a2c4e6b8d0f2b&amp;type=2#DropShadowFilterB&quot;) -15 -15 30 rgba(255, 255, 255, 0.698));">
+                <ui:VisualElement name="bookmark-icon" class="icon-button__bookmark-icon"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="dot-button-sample" class="icon-button icon-button--dot" style="filter: filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/DropShadowFilter.asset?fileID=11400000&amp;guid=5b9e2f4a6c8d4e1f0a3b5c7d9e1f2a4c&amp;type=2#DropShadowFilter&quot;) 15 15 30 rgba(0, 0, 0, 0.298)) filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/DropShadowFilterB.asset?fileID=11400000&amp;guid=2b4d6f8a0c2e4b6d8f0a2c4e6b8d0f2b&amp;type=2#DropShadowFilterB&quot;) -15 -15 30 rgba(255, 255, 255, 0.698));">
+                <ui:VisualElement name="dot-button-fill" class="icon-button__dot"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="gradient-progress-sample" class="progress-bar">
+                <ui:VisualElement name="progress-track" class="progress-bar__track" style="filter: filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/InnerShadowFilter.asset?fileID=11400000&amp;guid=1f3a5c7e9b1d3f5a7c9e1b3d5f7a9d1f&amp;type=2#InnerShadowFilter&quot;) 20 -20 20 rgba(0, 0, 0, 0.2));"/>
+                <ui:VisualElement name="progress-fill-mask" class="progress-bar__fill-mask">
+                    <ui:VisualElement name="progress-fill" class="progress-bar__fill"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="footer-samples-row" class="sample-showcase__row sample-showcase__row--footer">
+            <ui:VisualElement name="search-bar-sample" class="search-bar" style="filter: filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/InnerShadowFilter.asset?fileID=11400000&amp;guid=1f3a5c7e9b1d3f5a7c9e1b3d5f7a9d1f&amp;type=2#InnerShadowFilter&quot;) -20 -20 20 rgba(0, 0, 0, 0.208)) filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/OutlineFilter.asset?fileID=11400000&amp;guid=6d8f0a2c4e6b8d0f2a4c6e8b0d2f4a6c&amp;type=2#OutlineFilter&quot;) 15.65 rgb(255, 255, 255) 0);">
+                <ui:Image name="search-icon" source="project://database/Packages/com.nkstudio.uitk-effects/Samples~/Filter%20Sample/UI/Icons/Search_Icon.svg?fileID=7388822144124034973&amp;guid=c19dfc737cfd4b32a5d3c1549cf79ca4&amp;type=3#Search_Icon" tint-color="rgb(80, 80, 80)" class="search-bar__icon"/>
+                <ui:Label name="search-placeholder-label" text="Search for ..." class="search-bar__label"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="nk-studio-logo-sample" class="logo">
+                <ui:Label name="nk-studio-logo-label" text="NK Studio" class="logo__label" style="filter: filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/OutlineFilter.asset?fileID=11400000&amp;guid=6d8f0a2c4e6b8d0f2a4c6e8b0d2f4a6c&amp;type=2#OutlineFilter&quot;) 7 rgb(255, 255, 255) 0) filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/DropShadowFilter.asset?fileID=11400000&amp;guid=5b9e2f4a6c8d4e1f0a3b5c7d9e1f2a4c&amp;type=2#DropShadowFilter&quot;) 8 8 7 rgba(0, 0, 0, 0.5));"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
