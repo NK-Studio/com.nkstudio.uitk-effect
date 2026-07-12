@@ -26,8 +26,6 @@ UI Toolkit용 커스텀 포스트프로세싱 필터 + 그라디언트 머티리
 | Outline | filter | `width` `color` `mode` (0=Outside 1=Center 2=Inside) | `Scripts/Runtime/Filters/OutlineFilter.asset` |
 | Gradient | 머티리얼 (`-unity-material`) | `_ColorStart` `_ColorEnd` `_Angle` `_Steps` | `Art/Materials/Gradient.mat` |
 
-DropShadow/InnerShadow는 **B 버전**(`DropShadowFilterB.asset`, `InnerShadowFilterB.asset`)도 함께 제공됩니다. 같은 필터를 한 요소에 다른 파라미터로 두 번(네오모피즘의 밝은/어두운 그림자 등) 걸어야 할 때는 반드시 원본과 B버전을 하나씩 섞어 쓰세요 — 동일 애셋을 한 체인에 두 번 참조하면 파싱이 깨집니다 (아래 주의사항 참고).
-
 ## 사용법
 
 ### 필터 (Drop Shadow / Inner Shadow / Outer Glow / Outline)
@@ -79,21 +77,12 @@ element.style.filter = new List<FilterFunction> { f };
 
 `-unity-material`은 **상속되는 프로퍼티**이므로, 자식 요소가 그라디언트 영향을 받지 않게 하려면 자식에 `-unity-material: none;`을 명시하세요.
 
-## 주의사항 — 같은 필터 애셋을 한 체인에 두 번 쓰지 말 것
-
-**같은 `FilterFunctionDefinition` 애셋**을 한 요소의 `filter:` 체인 안에서 두 번 참조하면 (예: 네오모피즘처럼 밝은 그림자+어두운 그림자를 DropShadow로 두 번 거는 경우) 파라미터 파싱이 깨지면서 `FilterFunction 'xxx' expects 4 parameters but 19 were provided` 같은 에러가 발생합니다.
+같은 `FilterFunctionDefinition` 애셋을 한 요소의 `filter:` 체인 안에서 여러 번 참조해도(예: 네오모피즘처럼 밝은 그림자+어두운 그림자를 DropShadow로 두 번 거는 경우) 정상 동작합니다.
 
 ```css
-/* ❌ 깨짐 — 같은 애셋을 두 번 참조 */
 filter: filter("...DropShadowFilter.asset" 20 20 70 rgba(0,0,0,.3))
         filter("...DropShadowFilter.asset" -20 -20 70 rgba(255,255,255,.7));
-
-/* ✅ 정상 — 원본 + B버전을 섞어서 사용 */
-filter: filter("...DropShadowFilter.asset" 20 20 70 rgba(0,0,0,.3))
-        filter("...DropShadowFilterB.asset" -20 -20 70 rgba(255,255,255,.7));
 ```
-
-서로 다른 필터(예: Outline + DropShadow)를 체인으로 거는 것은 문제없습니다. 이 제약은 Unity 6.5 UI Toolkit의 필터 파서 내부 동작으로 보이며, 커스텀 필터를 추가로 만들 때도 같은 패턴(원본 + B버전 애셋 쌍)을 따르는 것을 권장합니다.
 
 ## Unity 6.5 참고사항
 

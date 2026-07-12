@@ -1,0 +1,19 @@
+{
+    "entries": [
+        { "key": "subtitle", "en": "UI Builder Setup", "kr": "UI 빌더 설정" },
+        { "key": "description", "en": "Install the filter definitions and gradient material into your project's Assets folder so they appear in UI Builder's asset pickers.", "kr": "필터 정의와 그라디언트 머티리얼을 프로젝트의 Assets 폴더에 설치하여 UI 빌더의 애셋 선택기에 표시되도록 합니다." },
+        { "key": "install_location", "en": "INSTALL LOCATION", "kr": "설치 위치" },
+        { "key": "ui_builder_assets", "en": "UI BUILDER ASSETS", "kr": "UI 빌더 애셋" },
+        { "key": "show_installed_assets", "en": "Show Installed Assets", "kr": "설치된 애셋 보기" },
+        { "key": "show_at_startup", "en": "Show at startup", "kr": "시작 시 표시" },
+        { "key": "close", "en": "Close", "kr": "닫기" },
+        { "key": "installed", "en": "Installed", "kr": "설치됨" },
+        { "key": "missing", "en": "Missing", "kr": "없음" },
+        { "key": "install_button_complete", "en": "UI Builder Assets Installed", "kr": "UI 빌더 애셋 설치 완료" },
+        { "key": "install_button_partial", "en": "Install Missing Assets", "kr": "누락된 애셋 설치" },
+        { "key": "install_button_default", "en": "Install UI Builder Assets", "kr": "UI 빌더 애셋 설치" },
+        { "key": "result_installed", "en": "Installed {0} UI Builder asset(s). They are now available in the asset pickers.", "kr": "UI 빌더 애셋 {0}개를 설치했습니다. 이제 애셋 선택기에서 사용할 수 있습니다." },
+        { "key": "result_all_installed", "en": "All UI Builder assets are already installed.", "kr": "모든 UI 빌더 애셋이 이미 설치되어 있습니다." },
+        { "key": "result_failures", "en": "Some definitions could not be installed: {0}", "kr": "일부 정의를 설치하지 못했습니다: {0}" }
+    ]
+}

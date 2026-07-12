@@ -1,0 +1,16 @@
+{
+    "name": "com.nkstudio.uitk-effects.editor",
+    "rootNamespace": "NKStudio.UITKEffects.Editor",
+    "references": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
