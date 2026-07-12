@@ -193,9 +193,9 @@
 
 .search-bar__icon {
     position: relative;
-    height: 40px;
-    width: 40px;
-    filter: filter(url("project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/OutlineFilter.asset?fileID=11400000&guid=6d8f0a2c4e6b8d0f2a4c6e8b0d2f4a6c&type=2#OutlineFilter") 1.7 rgb(80, 80, 80) 0);
+    filter: none;
+    width: 30px;
+    height: 30px;
 }
 
 .search-bar__label {

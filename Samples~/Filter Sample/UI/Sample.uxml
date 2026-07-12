@@ -30,7 +30,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="footer-samples-row" class="sample-showcase__row sample-showcase__row--footer">
             <ui:VisualElement name="search-bar-sample" class="search-bar" style="filter: filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/InnerShadowFilter.asset?fileID=11400000&amp;guid=1f3a5c7e9b1d3f5a7c9e1b3d5f7a9d1f&amp;type=2#InnerShadowFilter&quot;) -20 -20 20 rgba(0, 0, 0, 0.208)) filter(url(&quot;project://database/Packages/com.nkstudio.uitk-effects/Scripts/Runtime/Filters/OutlineFilter.asset?fileID=11400000&amp;guid=6d8f0a2c4e6b8d0f2a4c6e8b0d2f4a6c&amp;type=2#OutlineFilter&quot;) 15.65 rgb(255, 255, 255) 0);">
-                <ui:Image name="search-icon" source="project://database/Packages/com.nkstudio.uitk-effects/Samples~/Filter%20Sample/UI/Icons/Search_Icon.svg?fileID=7388822144124034973&amp;guid=c19dfc737cfd4b32a5d3c1549cf79ca4&amp;type=3#Search_Icon" tint-color="rgb(80, 80, 80)" class="search-bar__icon"/>
+                <ui:Image name="search-icon" source="project://database/Packages/com.nkstudio.uitk-effects/Samples~/Filter%20Sample/UI/Icons/Search_Icon.svg?fileID=7388822144124034973&amp;guid=c19dfc737cfd4b32a5d3c1549cf79ca4&amp;type=3#Search_Icon" tint-color="rgb(129, 129, 129)" class="search-bar__icon"/>
                 <ui:Label name="search-placeholder-label" text="Search for ..." class="search-bar__label"/>
             </ui:VisualElement>
             <ui:VisualElement name="nk-studio-logo-sample" class="logo">
