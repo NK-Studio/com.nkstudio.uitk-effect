@@ -40,7 +40,16 @@ Shader "UIEffects/Outline"
             half4 _OutlineColor;
             float _Mode;
 
-            #define OUTLINE_SAMPLES 32
+            // Sample count scales with the outline width: a fixed low count leaves the
+            // Vogel rim too sparse at large widths, so the max/min dilation only touches
+            // the shape at discrete points and the silhouette scallops into blobs. We aim
+            // for roughly one sample per ~PI px of the widest radius (rim gap ~4px), clamped
+            // to keep small outlines cheap and very large ones bounded. Beyond the cap the
+            // edge softens rather than staying razor sharp — a single-pass disc dilation
+            // can't stay crisp at arbitrary radius (that needs an SDF/jump-flood approach).
+            #define OUTLINE_MIN_SAMPLES 24
+            #define OUTLINE_MAX_SAMPLES 256
+            #define OUTLINE_SAMPLES_PER_PX 3.14159265
             #define GOLDEN_ANGLE 2.39996323
 
             v2f vert (FilterVertexInput v)
@@ -68,6 +77,16 @@ Shader "UIEffects/Outline"
 
                 half4 col = tex2D(_MainTex, i.uv);
 
+                // No stroke when width is non-positive or the mode is out of the valid 0..2
+                // range (0=Outside, 1=Center, 2=Inside); pass the element through untouched.
+                if (_Width <= 0.0 || _Mode < 0.0 || _Mode > 2.0)
+                {
+                    #if _UIE_OUTPUT_LINEAR
+                    col.rgb = GammaToLinearSpace(col.rgb);
+                    #endif
+                    return col;
+                }
+
                 // Outside grows the silhouette outward by the full width, Inside shrinks
                 // it inward by the full width, Center splits the width evenly across the
                 // edge. Dilation (max) and erosion (min) share the same Vogel-spiral loop;
@@ -78,10 +97,16 @@ Shader "UIEffects/Outline"
                 float dilated = col.a;
                 float eroded = col.a;
 
+                // Density follows the widest radius (in px) so the rim stays covered.
+                float maxRadius = max(outerRadius, innerRadius);
+                int sampleCount = (int)clamp(ceil(maxRadius * OUTLINE_SAMPLES_PER_PX),
+                                             OUTLINE_MIN_SAMPLES, OUTLINE_MAX_SAMPLES);
+                float invCount = 1.0 / sampleCount;
+
                 [loop]
-                for (int k = 0; k < OUTLINE_SAMPLES; k++)
+                for (int k = 0; k < sampleCount; k++)
                 {
-                    float r = sqrt((k + 0.5) / OUTLINE_SAMPLES);
+                    float r = sqrt((k + 0.5) * invCount);
                     float theta = k * GOLDEN_ANGLE;
                     float2 dir = float2(cos(theta), sin(theta));
                     dilated = max(dilated, SampleAlpha(i.uv + dir * r * outerRadius * texel, uvRect));
