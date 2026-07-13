@@ -80,6 +80,12 @@ Shader "UIEffects/InnerShadow"
                 // toward the shape's interior.
                 float2 shadowUV = i.uv + float2(_OffsetX, -_OffsetY) * texel;
 
+                // Clamp to 0: negative blur would flip every tap to the opposite side of
+                // the disk, distorting non-symmetric shapes instead of just sharpening the
+                // shadow. 0 already collapses every tap onto shadowUV (a hard edge), so
+                // clamping keeps "0 or below" at that same crisp, undistorted look.
+                float blurRadius = max(0.0, _BlurRadius);
+
                 float invAlpha = 1.0 - SampleAlpha(shadowUV, uvRect);
                 float weightSum = 1.0;
 
@@ -90,7 +96,7 @@ Shader "UIEffects/InnerShadow"
                     float theta = k * GOLDEN_ANGLE;
                     float2 tap = r * float2(cos(theta), sin(theta));
                     float w = exp(-2.0 * r * r);
-                    invAlpha += (1.0 - SampleAlpha(shadowUV + tap * _BlurRadius * texel, uvRect)) * w;
+                    invAlpha += (1.0 - SampleAlpha(shadowUV + tap * blurRadius * texel, uvRect)) * w;
                     weightSum += w;
                 }
                 invAlpha /= weightSum;

@@ -73,6 +73,12 @@ Shader "UIEffects/DropShadow"
                 // Positive Y offset moves the shadow down, matching CSS drop-shadow.
                 float2 shadowUV = i.uv - float2(_OffsetX, -_OffsetY) * texel;
 
+                // Clamp to 0: negative blur would flip every tap to the opposite side of
+                // the disk, which distorts non-symmetric shapes instead of just sharpening
+                // the shadow. 0 already collapses every tap onto shadowUV (a hard edge), so
+                // clamping keeps "0 or below" at that same crisp, undistorted look.
+                float blurRadius = max(0.0, _BlurRadius);
+
                 // Vogel disk: golden-angle spiral covers the disc uniformly with no
                 // dominant center tap, so density holds up at large blur radii.
                 float blurAlpha = 0.0;
@@ -85,7 +91,7 @@ Shader "UIEffects/DropShadow"
                     float theta = k * GOLDEN_ANGLE;
                     float2 tap = r * float2(cos(theta), sin(theta));
                     float w = exp(-2.0 * r * r);
-                    blurAlpha += SampleShadowAlpha(shadowUV + tap * _BlurRadius * texel, uvRect) * w;
+                    blurAlpha += SampleShadowAlpha(shadowUV + tap * blurRadius * texel, uvRect) * w;
                     weightSum += w;
                 }
                 blurAlpha /= weightSum;
