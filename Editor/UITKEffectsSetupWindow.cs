@@ -46,7 +46,7 @@ namespace NKStudio.UITKEffects.Editor
         private Button _showSampleButton;
         private Label _resultMessage;
 
-        [MenuItem("Window/NK Studio/UITK Effects Setup")]
+        [MenuItem("Tools/UITK Effects/Setup Window")]
         internal static void ShowSetupWindow()
         {
             var window = GetWindow<UITKEffectsSetupWindow>(true, "UITK Effects Setup", true);
