@@ -68,6 +68,16 @@ Shader "UIEffects/OuterGlow"
 
                 half4 col = tex2D(_MainTex, i.uv);
 
+                // No glow when radius or intensity is non-positive; pass the element
+                // through untouched instead of computing a zero-strength halo.
+                if (_Radius <= 0.0 || _Intensity <= 0.0)
+                {
+                    #if _UIE_OUTPUT_LINEAR
+                    col.rgb = GammaToLinearSpace(col.rgb);
+                    #endif
+                    return col;
+                }
+
                 // Same Vogel-disk gaussian blur as the drop-shadow filter, but sampled
                 // in place (no offset) so the halo radiates evenly in every direction.
                 float blurAlpha = 0.0;
