@@ -86,9 +86,9 @@
     padding-bottom: 0;
     padding-left: 0;
     -unity-text-align: middle-center;
-    -unity-font-definition: url("Fonts/Pretendard-ExtraBold.otf");
+    -unity-font-definition: url("project://database/Assets/Samples/UITK%20Effects/1.0.0/Filter%20Sample/UI/Fonts/Pretendard-Medium.otf?fileID=12800000&guid=618cdf9a82ee4e7a9b6973f944cfc442&type=3#Pretendard-Medium");
     font-size: 23px;
-    color: rgb(184, 188, 191);
+    color: rgb(154, 154, 154);
 }
 
 .shadow-card__label--small {
@@ -120,7 +120,7 @@
 }
 
 .icon-button__bookmark-icon {
-    background-image: url("Icons/S_Icon-Bookmark-Fill.svg");
+    background-image: url("project://database/Assets/Samples/UITK%20Effects/1.0.0/Filter%20Sample/UI/Icons/S_Icon-Bookmark-Fill.svg?fileID=7388822144124034973&guid=18bdd2c83e234ba9a1e6208e8c7d3d6c&type=3#S_Icon-Bookmark-Fill");
     background-color: rgba(0, 0, 0, 0);
     -unity-background-image-tint-color: rgb(35, 114, 235);
     -unity-background-scale-mode: scale-to-fit;
@@ -198,18 +198,29 @@
     height: 30px;
 }
 
-.search-bar__label {
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
+.search-bar__field {
+    flex-grow: 1;
     margin-left: 18px;
-    -unity-font-definition: url("Fonts/Pretendard-Medium.otf");
+    margin-right: 32px;
+    -unity-font-definition: url("project://database/Assets/Samples/UITK%20Effects/1.0.0/Filter%20Sample/UI/Fonts/Pretendard-Medium.otf?fileID=12800000&guid=618cdf9a82ee4e7a9b6973f944cfc442&type=3#Pretendard-Medium");
+}
+
+.search-bar__field .unity-base-field__input {
+    background-color: rgba(0, 0, 0, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.search-bar__field .unity-text-element {
+    -unity-font-definition: url("project://database/Assets/Samples/UITK%20Effects/1.0.0/Filter%20Sample/UI/Fonts/Pretendard-Medium.otf?fileID=12800000&guid=618cdf9a82ee4e7a9b6973f944cfc442&type=3#Pretendard-Medium");
     font-size: 34px;
-    color: rgb(129, 129, 129);
+    color: rgb(90, 90, 90);
 }
 
 .logo {
@@ -226,10 +237,10 @@
     padding-right: 0;
     padding-bottom: 0;
     padding-left: 0;
-    -unity-font-definition: url("Fonts/memomentKkukkkuk.ttf");
     font-size: 72px;
     -unity-text-align: middle-center;
     position: relative;
     color: rgb(255, 255, 255);
     -unity-material: url("project://database/Packages/com.nkstudio.uitk-effects/Art/Materials/Gradient.mat?fileID=2100000&guid=0d2f4a6c8e0b2d4f6a8c0e2b4d6f8a0d&type=2#Gradient") prop("_ColorStart" rgb(112, 58, 255));
+    -unity-font-definition: url("project://database/Assets/Samples/UITK%20Effects/1.0.0/Filter%20Sample/UI/Fonts/Pretendard-Medium.otf?fileID=12800000&guid=618cdf9a82ee4e7a9b6973f944cfc442&type=3#Pretendard-Medium");
 }
