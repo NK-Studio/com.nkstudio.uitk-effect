@@ -41,6 +41,14 @@
             <ui:Label name="result-message" class="result-message" />
             <ui:Button name="install-button" text="Install UI Builder Assets" class="primary-button" />
             <ui:Button name="open-folder-button" text="Show Installed Assets" class="secondary-button" />
+
+            <ui:VisualElement class="sample-panel">
+                <ui:Label name="sample-eyebrow" text="FILTER SAMPLE" class="section-eyebrow" />
+                <ui:Label name="sample-title" text="Neumorphism Sample" class="sample-title" />
+                <ui:Label name="sample-description" class="sample-description" />
+                <ui:Button name="import-sample-button" text="Download Sample" class="primary-button sample-button" />
+                <ui:Button name="show-sample-button" text="Show Imported Sample" class="secondary-button" />
+            </ui:VisualElement>
         </ui:ScrollView>
 
         <ui:VisualElement class="setup-footer">

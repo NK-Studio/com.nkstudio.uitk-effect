@@ -14,6 +14,16 @@
         { "key": "install_button_default", "en": "Install UI Builder Assets", "kr": "UI 빌더 애셋 설치" },
         { "key": "result_installed", "en": "Installed {0} UI Builder asset(s). They are now available in the asset pickers.", "kr": "UI 빌더 애셋 {0}개를 설치했습니다. 이제 애셋 선택기에서 사용할 수 있습니다." },
         { "key": "result_all_installed", "en": "All UI Builder assets are already installed.", "kr": "모든 UI 빌더 애셋이 이미 설치되어 있습니다." },
-        { "key": "result_failures", "en": "Some definitions could not be installed: {0}", "kr": "일부 정의를 설치하지 못했습니다: {0}" }
+        { "key": "result_failures", "en": "Some definitions could not be installed: {0}", "kr": "일부 정의를 설치하지 못했습니다: {0}" },
+        { "key": "sample_eyebrow", "en": "FILTER SAMPLE", "kr": "필터 샘플" },
+        { "key": "sample_title", "en": "Neumorphism Sample", "kr": "뉴모리즘 샘플" },
+        { "key": "sample_description", "en": "Download a sample that implements a neumorphism UI using the included filter effects.", "kr": "필터 효과들을 사용해 뉴모리즘 UI를 구현한 샘플을 다운로드 제공합니다." },
+        { "key": "sample_import", "en": "Download Sample", "kr": "샘플 내려받기" },
+        { "key": "sample_reimport", "en": "Download Sample Again", "kr": "샘플 다시 내려받기" },
+        { "key": "sample_show", "en": "Show Imported Sample", "kr": "가져온 샘플 보기" },
+        { "key": "sample_not_found", "en": "The recommended sample could not be found in this package.", "kr": "이 패키지에서 권장 샘플을 찾지 못했습니다." },
+        { "key": "sample_reimport_title", "en": "Reimport Filter Sample", "kr": "필터 샘플 다시 가져오기" },
+        { "key": "sample_reimport_message", "en": "The sample is already imported. Reimport it and overwrite previous files?", "kr": "샘플을 이미 가져왔습니다. 기존 파일을 덮어쓰고 다시 가져오시겠습니까?" },
+        { "key": "sample_imported", "en": "Imported the {0} sample for Unity {1}.", "kr": "Unity {1}용 {0} 샘플을 가져왔습니다." }
     ]
 }

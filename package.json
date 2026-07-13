@@ -7,6 +7,7 @@
   "description": "UI Toolkit custom post-processing filters and gradient material.\n\n\u25aa Drop Shadow / Inner Shadow / Outer Glow / Outline filters (FilterFunctionDefinition assets)\n\u25aa Gradient material for -unity-material, with angle and step (posterize) control\n\u25aa Asset-only: no runtime C# required",
   "author": {
     "name": "NK Studio",
+    "url": "https://nk-studio.github.io/portfolio/index.html",
     "email": "bnm000215@naver.com"
   },
   "changelogUrl": "https://nk-studio.github.io/Packages/com.nkstudio.uitk-effects@1.0/changelog/CHANGELOG.html",
@@ -14,9 +15,14 @@
   "licensesUrl": "https://nk-studio.github.io/Packages/com.nkstudio.uitk-effects@1.0/license/License.html",
   "samples": [
     {
-      "displayName": "Filter Sample",
-      "description": "Demonstrates shadows, outline, and gradient effects with UI Toolkit.",
-      "path": "Samples~/Filter Sample"
+      "displayName": "Filter Sample (Unity 6.3)",
+      "description": "UIDocument-based filter sample for Unity 6.3 and 6.4.",
+      "path": "Samples~/Filter Sample - Unity 6.3"
+    },
+    {
+      "displayName": "Filter Sample (Unity 6.5+)",
+      "description": "PanelRenderer-based filter sample for Unity 6.5 or newer.",
+      "path": "Samples~/Filter Sample - Unity 6.5"
     }
   ]
 }
