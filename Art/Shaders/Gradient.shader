@@ -235,7 +235,7 @@ Shader "UIEffects/Gradient"
 
                 float4 gradient = lerp(_ColorStart, _ColorEnd, t);
 
-#if !UIE_COLORSPACE_GAMMA
+#if UIE_COLORSPACE_GAMMA
                 // _ColorStart/_ColorEnd arrive as raw sRGB values from USS prop().
                 // UITK converts vertex colors to linear in uie_std_vert, so do the
                 // same here or the gradient renders washed out in linear panels.
