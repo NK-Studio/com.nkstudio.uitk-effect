@@ -193,7 +193,6 @@
 
 .search-bar__icon {
     position: relative;
-    filter: none;
     width: 30px;
     height: 30px;
 }
